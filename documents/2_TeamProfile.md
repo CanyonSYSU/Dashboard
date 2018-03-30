@@ -8,8 +8,8 @@
 | :--: | :--: | :--: | :--: |
 | 15331107 | 胡浚楠 | Junnan Hu | UI设计师、QA工程师 |
 | 15331098 | 何子龙 | Zilong He | 技术经理（架构师） |  
-| 15331104 | 侯红潇 | Hongxiao hou | js工程师、DevOps工程师 |
-
+| 15331104 | 侯红潇 | Hongxiao Hou | js工程师、DevOps工程师 |
+| 15331103 | 洪振伟 | Zhenwei Hong | java工程师、android工程师 |
 
 **具体分工与个人宣言**
 
