@@ -6,9 +6,9 @@ About Project, Core artifacts, Iterations
 
 # Core artifacts
 
-  + [项目愿景](.\4_Vision.md)  
-  + [需求文档](.\5_ProductBacklog.md)  
-  + [产品调查报告](.\3_Investigation.md)
+  + [项目愿景](4_Vision.md)  
+  + [需求文档](5_ProductBacklog.md)  
+  + [产品调查报告](3_Investigation.md)
 
 # Iterations  
 
