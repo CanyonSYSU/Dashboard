@@ -1,0 +1,17 @@
+future: true
+permalink: /:title/
+url: https://CanyonSYSU.github.io/food-ordering-mini-app
+name: CanyonSYSU
+author: CanyonSYSU
+qq: 435191784
+email: 435191784@qq.com
+
+duoshuo: CanyonSYSU
+beian: 
+cnzz: 
+weibo: 
+github: CanyonSYSU
+about: "这里是CanyonSYSU的团体博客，创建于 2018 年。"
+
+safe: true
+paginate: 20
