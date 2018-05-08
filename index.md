@@ -21,7 +21,7 @@
   - 7.3 API 设计
 - 8、生产规范与指南
   - 8.1 [JavaScript代码规范](./documents/8_生产规范与指南/8.1_JavaScript代码规范.md)
-  - 8.1 [WXML](./documents/8_生产规范与指南/8.1_WXML代码规范.md)
+  - 8.1 [WXML代码规范](./documents/8_生产规范与指南/8.1_WXML代码规范.md)
   - 8.1 [WXSS代码规范](./documents/8_生产规范与指南/8.1_WXSS代码规范.md)
   - 8.2 [REST API 设计规范](./documents/8_生产规范与指南/8.2_RESTAPI设计规范.md)
 - X1 meet_recording
