@@ -15,7 +15,7 @@
 - 7、Design（设计）
   - 7.1 [UI design](./documents/7.1_UIDesign.md)
     - XX 用例 UI设计
-  - 7.2 Database design
+  - 7.2 [Database design](./documents/7.2 Database design.md)
     - 7.2.1 用户及权限系统数据库设计
     - 7.2.2 XX子系统数据课设计
     - 7.2.x 第三方数据评审结果
