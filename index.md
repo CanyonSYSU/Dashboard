@@ -6,9 +6,9 @@
 - 3、[Investigation](./documents/3_Investigation)（项目前期调研）
 - 4、[Vision](./documents/4_Vision.md)（项目愿景）
 - 5、[Product Backlog](./documents/5_ProductBacklog.md) （产品特性）
-- 6、[Requirement specification](./documents/6_Requirement_specification.md)（需求规格说明）
-  - 6.1 Usecase Diagram（用例图）
-  - 6.2 Use Cases（用例+活动图）
+- 6、Requirement specification（需求规格说明）
+  - 6.1 [Usecase Diagram](./documents/6_Requirement_specification.md)（用例图）
+  - 6.2 [Use Cases](./documents/6_Use_Cases.md)（用例+活动图）
   - 6.3 [Domian Model](./documents/6.3_Domian_Model.md)（领域模型）
   - 6.4 State Model（状态模型）
   - 6.5 System Sequence Diagram（功能模型）
