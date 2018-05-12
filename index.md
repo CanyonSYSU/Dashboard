@@ -29,6 +29,6 @@
 - X2 Tech/Work Report
   - 学号-title
 - XX 建模练习
-  - XX1 XX应用
+  - XX1 [饿了么应用](./documents/XX_建模练习/XX1_饿了么应用/饿了么.md)
   - XX2 建模要求
   - XX3 建模者答案与评价
