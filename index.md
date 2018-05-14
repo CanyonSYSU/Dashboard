@@ -6,9 +6,9 @@
 - 5、[Product Backlog](./documents/5_ProductBacklog.md) （产品特性）
 - 6、Requirement specification（需求规格说明）
   - 6.1 [Usecase Diagram](./documents/6_Requirement_specification.md)（用例图）
-  - 6.2 [Use Cases](./documents/6_Use_Cases.md)（用例+活动图）
+  - 6.2 [Use Cases](./documents/6.2_Use_Cases.md)（用例+活动图）
   - 6.3 [Domian Model](./documents/6.3_Domian_Model.md)（领域模型）
-  - 6.4 State Model（状态模型）
+  - 6.4 [State Model](./documents/6.4_State_Model.md)（状态模型）
   - 6.5 System Sequence Diagram（功能模型）
 - 7、Design（设计）
   - 7.1 [UI design](./documents/7.1_UIDesign.md)
