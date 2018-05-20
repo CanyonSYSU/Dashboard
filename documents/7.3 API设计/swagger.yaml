@@ -1,0 +1,1118 @@
+---
+swagger: "2.0"
+info:
+  description: "Doc_of_SuiXinDianCanBao"
+  version: "2.01"
+  title: "SuiXinDianCanBao"
+  termsOfService: "https://github.com/CanyonSYSU"
+  contact:
+    email: "sunny940704247@qq.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "localhost:8080"
+basePath: "/CanyonSysu"
+schemes:
+- "https"
+paths:
+  /resturant:
+    post:
+      tags:
+      - "resturant"
+      summary: "Add a new resturant to the store"
+      description: ""
+      operationId: "addResturant"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Resturant object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/Resturant"
+      responses:
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "Resturant"
+    put:
+      tags:
+      - "resturant"
+      summary: "Update an existing resturant"
+      description: ""
+      operationId: "updateRestruant"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Resturant object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/Resturant"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Resturant not found"
+        405:
+          description: "Validation exception"
+      security:
+      - petstore_auth:
+        - "write:pets"
+        - "read:pets"
+      x-swagger-router-controller: "Resturant"
+  /resturant/{id}:
+    delete:
+      tags:
+      - "resturant"
+      summary: "Delete resturant by ID"
+      description: ""
+      operationId: "deleteResturant"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the resturant that needs to be deleted"
+        required: true
+        type: "integer"
+        minimum: 1
+        format: "int64"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "resturant not found"
+      x-swagger-router-controller: "Resturant"
+  /resturant/findByName:
+    get:
+      tags:
+      - "resturant"
+      summary: "Finds Resturant by name"
+      description: "different resturant have same name"
+      operationId: "findResByName"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "name"
+        in: "query"
+        description: "Name values that need to be considered for filter"
+        required: true
+        type: "string"
+        collectionFormat: "multi"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Resturant"
+        400:
+          description: "Invalid name value"
+      security:
+      - petstore_auth:
+        - "write:pets"
+        - "read:pets"
+      x-swagger-router-controller: "Resturant"
+  /order:
+    post:
+      tags:
+      - "order"
+      summary: "Add a new order to the store"
+      description: ""
+      operationId: "addOrder"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Order object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/Order"
+      responses:
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "Order"
+    put:
+      tags:
+      - "order"
+      summary: "Update an existing Order"
+      description: ""
+      operationId: "updateOrder"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Order object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/Order"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Resturant not found"
+        405:
+          description: "Validation exception"
+      security:
+      - petstore_auth:
+        - "write:pets"
+        - "read:pets"
+      x-swagger-router-controller: "Order"
+  /order/{id}:
+    delete:
+      tags:
+      - "order"
+      summary: "Delete order by ID"
+      description: ""
+      operationId: "deleteOrder"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the order that needs to be deleted"
+        required: true
+        type: "integer"
+        minimum: 1
+        format: "int64"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "order not found"
+      x-swagger-router-controller: "Order"
+  /order/findBydeskId:
+    get:
+      tags:
+      - "order"
+      summary: "Finds order by deskId"
+      description: "Multiple order with different status will be find"
+      operationId: "findOrderByDeskId"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "deskId"
+        in: "query"
+        description: "deskID values that need to be considered for filter"
+        required: true
+        type: "integer"
+        collectionFormat: "multi"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Order"
+        400:
+          description: "Invalid deskId value"
+      security:
+      - petstore_auth:
+        - "write:pets"
+        - "read:pets"
+      x-swagger-router-controller: "Order"
+  /order/findByshipDate:
+    get:
+      tags:
+      - "order"
+      summary: "Finds order by Date"
+      description: "Multiple order will be found"
+      operationId: "findOrderByShipDate"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "shipDate"
+        in: "query"
+        description: "shipDate values that need to be considered for filter"
+        required: true
+        type: "string"
+        collectionFormat: "multi"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Order"
+        400:
+          description: "Invalid shipDate value"
+      security:
+      - petstore_auth:
+        - "write:pets"
+        - "read:pets"
+      x-swagger-router-controller: "Order"
+  /order/findByStatus:
+    get:
+      tags:
+      - "order"
+      summary: "Finds order by Status"
+      description: "Multiple order will be found"
+      operationId: "findOrderByStatus"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "status"
+        in: "query"
+        description: "status values that need to be considered for filter"
+        required: true
+        type: "string"
+        collectionFormat: "multi"
+        enum:
+        - "placed"
+        - "approved"
+        - "delivered"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Order"
+        400:
+          description: "Invalid Status value"
+      security:
+      - petstore_auth:
+        - "write:pets"
+        - "read:pets"
+      x-swagger-router-controller: "Order"
+  /order/findBycomplete:
+    get:
+      tags:
+      - "order"
+      summary: "Finds order by complete"
+      description: "Multiple order will be found"
+      operationId: "findOrderByComplete"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "complete"
+        in: "query"
+        description: "complete values that need to be considered for filter"
+        required: true
+        type: "boolean"
+        collectionFormat: "multi"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Order"
+        400:
+          description: "Invalid complete value"
+      security:
+      - petstore_auth:
+        - "write:pets"
+        - "read:pets"
+      x-swagger-router-controller: "Order"
+  /order/findBydeskIdAndcomplete:
+    get:
+      tags:
+      - "order"
+      summary: "Finds order by complete and tableid"
+      description: "Multiple order will be found"
+      operationId: "findOrderByCompleteAnddeskID"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "complete"
+        in: "query"
+        description: "complete values that need to be considered for filter"
+        required: true
+        type: "boolean"
+        collectionFormat: "multi"
+      - name: "deskId"
+        in: "query"
+        description: "deskId values that need to be considered for filter"
+        required: true
+        type: "integer"
+        collectionFormat: "multi"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Order"
+        400:
+          description: "Invalid complete or tableID value"
+      security:
+      - petstore_auth:
+        - "write:pets"
+        - "read:pets"
+      x-swagger-router-controller: "Order"
+  /desk:
+    post:
+      tags:
+      - "desk"
+      summary: "Add a new desk to the resturant"
+      description: ""
+      operationId: "addDesk"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Desk object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/Desk"
+      responses:
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "Desk"
+    put:
+      tags:
+      - "desk"
+      summary: "Update an existing Desk"
+      description: ""
+      operationId: "updateDesk"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Desk object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/Desk"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Desk not found"
+        405:
+          description: "Validation exception"
+      security:
+      - petstore_auth:
+        - "write:pets"
+        - "read:pets"
+      x-swagger-router-controller: "Desk"
+  /desk/{id}:
+    delete:
+      tags:
+      - "desk"
+      summary: "Delete desk by ID"
+      description: ""
+      operationId: "deleteDesk"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the Desk that needs to be deleted"
+        required: true
+        type: "integer"
+        minimum: 1
+        format: "int64"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "desk not found"
+      x-swagger-router-controller: "Desk"
+  /desk/findByresturantId:
+    get:
+      tags:
+      - "desk"
+      summary: "Finds desk by resturantId"
+      description: "Multiple desk with different deskid will be find"
+      operationId: "findDeskByResturantId"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "resturantId"
+        in: "query"
+        description: "resturantID values that need to be considered for filter"
+        required: true
+        type: "integer"
+        collectionFormat: "multi"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Desk"
+        400:
+          description: "Invalid resturantId value"
+      security:
+      - petstore_auth:
+        - "write:pets"
+        - "read:pets"
+      x-swagger-router-controller: "Desk"
+  /Dish:
+    post:
+      tags:
+      - "dish"
+      summary: "Add a new Dish to the resturant"
+      description: ""
+      operationId: "addDish"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Dish object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/Dish"
+      responses:
+        405:
+          description: "Invalid input"
+      x-swagger-router-controller: "Dish"
+    put:
+      tags:
+      - "dish"
+      summary: "Update an existing Dish"
+      description: ""
+      operationId: "updateDish"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Dish object that needs to be added to the store"
+        required: true
+        schema:
+          $ref: "#/definitions/Dish"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Dish not found"
+        405:
+          description: "Validation exception"
+      security:
+      - petstore_auth:
+        - "write:pets"
+        - "read:pets"
+      x-swagger-router-controller: "Dish"
+  /dish/{id}:
+    get:
+      tags:
+      - "dish"
+      summary: "Find dish by ID"
+      description: "Returns a single dish"
+      operationId: "getDishById"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of dish return"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Dish"
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "dish not found"
+      security:
+      - api_key: []
+      x-swagger-router-controller: "Dish"
+    delete:
+      tags:
+      - "dish"
+      summary: "Delete dish by ID"
+      description: ""
+      operationId: "deleteDish"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the Desk that needs to be deleted"
+        required: true
+        type: "integer"
+        minimum: 1
+        format: "int64"
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "dish not found"
+      x-swagger-router-controller: "Dish"
+  /dish/findByname:
+    get:
+      tags:
+      - "dish"
+      summary: "Finds dish by name"
+      description: "Multiple dish will be find"
+      operationId: "findDishByname"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "name"
+        in: "query"
+        description: "name values that need to be considered for filter"
+        required: true
+        type: "string"
+        collectionFormat: "multi"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Dish"
+        400:
+          description: "Invalid name value"
+      security:
+      - petstore_auth:
+        - "write:pets"
+        - "read:pets"
+      x-swagger-router-controller: "Dish"
+  /dish/findByStatus:
+    get:
+      tags:
+      - "dish"
+      summary: "Finds dish by Status"
+      description: "Multiple dish will be find"
+      operationId: "findDishBystatus"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "status"
+        in: "query"
+        description: "status values that need to be considered for filter"
+        required: true
+        type: "string"
+        collectionFormat: "multi"
+        enum:
+        - "available"
+        - "beenSold"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Dish"
+        400:
+          description: "Invalid status value"
+      security:
+      - petstore_auth:
+        - "write:pets"
+        - "read:pets"
+      x-swagger-router-controller: "Dish"
+  /dish/{id}/uploadImage:
+    post:
+      tags:
+      - "dish"
+      summary: "uploads an image"
+      description: ""
+      operationId: "uploadFile"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of dish to update"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "DishPhotoUrl"
+        in: "formData"
+        description: "file to upload"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Dish"
+      security:
+      - petstore_auth:
+        - "write:pets"
+        - "read:pets"
+      x-swagger-router-controller: "Dish"
+  /user:
+    post:
+      tags:
+      - "user"
+      summary: "Create user"
+      description: "This can only be done by the logged in user."
+      operationId: "createUser"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Created user object"
+        required: true
+        schema:
+          $ref: "#/definitions/User"
+      responses:
+        default:
+          description: "successful operation"
+      x-swagger-router-controller: "User"
+  /user/createWithArray:
+    post:
+      tags:
+      - "user"
+      summary: "Creates list of users with given input array"
+      description: ""
+      operationId: "createUsersWithArrayInput"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "List of user object"
+        required: true
+        schema:
+          type: "array"
+          items:
+            $ref: "#/definitions/User"
+      responses:
+        default:
+          description: "successful operation"
+      x-swagger-router-controller: "User"
+  /user/createWithList:
+    post:
+      tags:
+      - "user"
+      summary: "Creates list of users with given input array"
+      description: ""
+      operationId: "createUsersWithListInput"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "List of user object"
+        required: true
+        schema:
+          type: "array"
+          items:
+            $ref: "#/definitions/User"
+      responses:
+        default:
+          description: "successful operation"
+      x-swagger-router-controller: "User"
+  /user/login:
+    get:
+      tags:
+      - "user"
+      summary: "Logs user into the system"
+      description: ""
+      operationId: "loginUser"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "query"
+        description: "The user name for login"
+        required: true
+        type: "string"
+      - name: "password"
+        in: "query"
+        description: "The password for login in clear text"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "string"
+          headers:
+            X-Rate-Limit:
+              type: "integer"
+              format: "int32"
+              description: "calls per hour allowed by the user"
+            X-Expires-After:
+              type: "string"
+              format: "date-time"
+              description: "date in UTC when token expires"
+        400:
+          description: "Invalid username/password supplied"
+      x-swagger-router-controller: "User"
+  /user/logout:
+    get:
+      tags:
+      - "user"
+      summary: "Logs out current logged in user session"
+      description: ""
+      operationId: "logoutUser"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters: []
+      responses:
+        default:
+          description: "successful operation"
+      x-swagger-router-controller: "User"
+  /user/findByphone:
+    get:
+      tags:
+      - "user"
+      summary: "Finds user by phone"
+      description: "multiple user will be find"
+      operationId: "findUserByPhone"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "phone"
+        in: "query"
+        description: "phone values that need to be considered for filter"
+        required: true
+        type: "string"
+        collectionFormat: "multi"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/User"
+        400:
+          description: "Invalid phone value"
+      security:
+      - petstore_auth:
+        - "write:pets"
+        - "read:pets"
+      x-swagger-router-controller: "User"
+  /user/findBytableId:
+    get:
+      tags:
+      - "user"
+      summary: "Finds user by tableId"
+      description: "multiple user will be find"
+      operationId: "findUserBytableId"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "tableId"
+        in: "query"
+        description: "phone values that need to be considered for filter"
+        required: true
+        type: "integer"
+        collectionFormat: "multi"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/User"
+        400:
+          description: "Invalid table value"
+      security:
+      - petstore_auth:
+        - "write:pets"
+        - "read:pets"
+      x-swagger-router-controller: "User"
+  /user/{username}:
+    get:
+      tags:
+      - "user"
+      summary: "Get user by user name"
+      description: ""
+      operationId: "getUserByName"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "The name that needs to be fetched. Use user1 for testing. "
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/User"
+        400:
+          description: "Invalid username supplied"
+        404:
+          description: "User not found"
+      x-swagger-router-controller: "User"
+    put:
+      tags:
+      - "user"
+      summary: "Updated user"
+      description: "This can only be done by the logged in user."
+      operationId: "updateUser"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "name that need to be updated"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Updated user object"
+        required: true
+        schema:
+          $ref: "#/definitions/User"
+      responses:
+        400:
+          description: "Invalid user supplied"
+        404:
+          description: "User not found"
+      x-swagger-router-controller: "User"
+    delete:
+      tags:
+      - "user"
+      summary: "Delete user"
+      description: "This can only be done by the logged in user."
+      operationId: "deleteUser"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "path"
+        description: "The name that needs to be deleted"
+        required: true
+        type: "string"
+      responses:
+        400:
+          description: "Invalid username supplied"
+        404:
+          description: "User not found"
+      x-swagger-router-controller: "User"
+securityDefinitions:
+  petstore_auth:
+    type: "oauth2"
+    authorizationUrl: "http://petstore.swagger.io/oauth/dialog"
+    flow: "implicit"
+    scopes:
+      write:pets: "modify pets in your account"
+      read:pets: "read your pets"
+  api_key:
+    type: "apiKey"
+    name: "api_key"
+    in: "header"
+definitions:
+  Order:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      deskId:
+        type: "integer"
+        format: "int64"
+      quantity:
+        type: "integer"
+        format: "int32"
+      shipDate:
+        type: "string"
+        format: "date-time"
+      status:
+        type: "string"
+        description: "Order Status"
+        enum:
+        - "placed"
+        - "approved"
+        - "delivered"
+      complete:
+        type: "boolean"
+        default: false
+    example:
+      quantity: 1
+      id: 0
+      shipDate: "2000-01-23T04:56:07.000+00:00"
+      complete: false
+      deskId: 6
+      status: "placed"
+    xml:
+      name: "Order"
+  Desk:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      position:
+        type: "string"
+      resturantId:
+        type: "integer"
+        format: "int64"
+    example:
+      resturantId: 1
+      id: 6
+      position: "position"
+    xml:
+      name: "Desk"
+  User:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      username:
+        type: "string"
+      firstName:
+        type: "string"
+      lastName:
+        type: "string"
+      phone:
+        type: "string"
+      deskId:
+        type: "integer"
+        format: "int64"
+      userStatus:
+        type: "integer"
+        format: "int32"
+        description: "User Status"
+      order:
+        $ref: "#/definitions/Order"
+    example:
+      firstName: "firstName"
+      lastName: "lastName"
+      userStatus: 1
+      phone: "phone"
+      id: 0
+      deskId: 6
+      username: "username"
+      order:
+        quantity: 1
+        id: 0
+        shipDate: "2000-01-23T04:56:07.000+00:00"
+        complete: false
+        deskId: 6
+        status: "placed"
+    xml:
+      name: "User"
+  Dish:
+    type: "object"
+    required:
+    - "DishPhotoUrl"
+    - "cost"
+    - "id"
+    - "name"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      name:
+        type: "string"
+      cost:
+        type: "integer"
+        format: "float"
+      DishPhotoUrl:
+        type: "string"
+      status:
+        type: "string"
+        description: "dish status in the resturant"
+        enum:
+        - "available"
+        - "beenSold"
+    example:
+      cost: 6
+      name: "name"
+      DishPhotoUrl: "DishPhotoUrl"
+      id: 0
+      status: "available"
+    xml:
+      name: "Dish"
+  Resturant:
+    type: "object"
+    required:
+    - "name"
+    - "photoUrls"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      Desk:
+        $ref: "#/definitions/Desk"
+      name:
+        type: "string"
+        example: "doggie"
+      phone:
+        type: "string"
+      location:
+        type: "string"
+        example: "SYSU"
+      photoUrls:
+        type: "array"
+        xml:
+          name: "photoUrl"
+          wrapped: true
+        items:
+          type: "string"
+    example:
+      photoUrls:
+      - "photoUrls"
+      - "photoUrls"
+      phone: "phone"
+      name: "doggie"
+      Desk:
+        resturantId: 1
+        id: 6
+        position: "position"
+      location: "SYSU"
+      id: 0
+    xml:
+      name: "Restruant"
