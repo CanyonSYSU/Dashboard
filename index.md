@@ -42,7 +42,7 @@
   - [15331107-微信小程序开发学习报告](./documents/X2_TechWork_Report/15331107-微信小程序开发学习报告.md)
   - [15331113-微信web开发工具调试模块学习报告](./documents/X2_TechWork_Report/15331113-微信web开发工具调试模块学习报告.md)
   - [15331243-UMLet使用学习](./documents/X2_TechWork_Report/15331243-UMLet使用学习.md)
-  - [15331126-微信小程序学习报告](./documents/X2_TechWork_Report/15331126-微信小程序学习报告.pdf)
+  - [15331126-微信小程序学习报告](./documents/X2_TechWork_Report/15331126-微信小程序学习报告.md)
 - X3 Final Report
 - XX 建模练习
   - XX1 [饿了么应用](./documents/XX_建模练习/XX1_饿了么应用/饿了么.md)
