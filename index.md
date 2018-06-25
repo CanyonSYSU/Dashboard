@@ -1,4 +1,5 @@
 # 目录
+
 - 1、[About](./documents/1_About.md)（项目规划）
 - 2、[Team profile](./documents/2_TeamProfile.md)（团队组建）
 - 3、[Investigation](./documents/3_Investigation)（项目前期调研）
@@ -11,8 +12,9 @@
   - 6.4 [State Model](./documents/6.4_State_Model.md)（状态模型）
   - 6.5 System Sequence Diagram（功能模型）
 - 7、Design（设计）
-  - 7.1 [UI design](./documents/7.1_UIDesign.md)
-    - XX 用例 UI设计
+  - 7.1 UI design
+    - [消费者终端 UI设计](./documents/7.1_consumerUIDesign.md)
+    - [商家后台管理系统 UI设计](./documents/7.1_sellerUIDesign.md)
   - 7.2 [Database design](./documents/7.2_Database_design.md)
     - 7.2.1 用户及权限系统数据库设计
     - 7.2.2 XX子系统数据课设计
