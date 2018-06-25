@@ -11,25 +11,38 @@
   - 6.3 [Domian Model](./documents/6.3_Domian_Model.md)（领域模型）
   - 6.4 [State Model](./documents/6.4_State_Model.md)（状态模型）
   - 6.5 System Sequence Diagram（功能模型）
+  - 6.6 Supplementary Requirements（补充需求）
 - 7、Design（设计）
   - 7.1 UI design
-    - [消费者终端 UI设计](./documents/7.1_consumerUIDesign.md)
+    - [扫码点餐系统 UI设计](./documents/7.1_consumerUIDesign.md)
     - [商家后台管理系统 UI设计](./documents/7.1_sellerUIDesign.md)
   - 7.2 [Database design](./documents/7.2_Database_design.md)
     - 7.2.1 用户及权限系统数据库设计
     - 7.2.2 XX子系统数据课设计
     - 7.2.x 第三方数据评审结果
   - 7.3 API 设计
+  - 7.4 Software Architecture Document
+  - 7.5 Usecase design
+    - 7.5.1 [扫码点餐系统 case design]()
+    - 7.5.2 [商家后台管理系统 case dedign]()
 - 8、生产规范与指南
   - 8.1 [JavaScript代码规范](./documents/8_生产规范与指南/8.1_JavaScript代码规范.md)
   - 8.1 [WXML代码规范](./documents/8_生产规范与指南/8.1_WXML代码规范.md)
   - 8.1 [WXSS代码规范](./documents/8_生产规范与指南/8.1_WXSS代码规范.md)
   - 8.2 [REST API 设计规范](./documents/8_生产规范与指南/8.2_RESTAPI设计规范.md)
+  - 8.3 逻辑架构到应用程序映射指南
+  - 8.4 物理架构云上部署 dock-compose.yml 文件编写与使用
 - X1 meet_recording
   - inception meeting (yy/mm/dd)
   - Iteration X meeting (yy/mm/dd)
 - X2 Tech/Work Report
-  - 学号-title
+  - [15331098-微信小程序技术学习报告](./documents/X2_TechWork_Report/15331098-微信小程序技术学习报告.md)
+  - [15331103-UML用例图学习报告](./documents/X2_TechWork_Report/15331103-UML用例图学习报告.md)
+  - [15331104-Windows下Git&Github使用教程](./documents/X2_TechWork_Report/15331104-Windows下Git&Github使用教程.md)
+  - [15331107-微信小程序开发学习报告](./documents/X2_TechWork_Report/15331107-微信小程序开发学习报告.md)
+  - [15331113-微信web开发工具调试模块学习报告](./documents/X2_TechWork_Report/15331113-微信web开发工具调试模块学习报告.md)
+  - [15331243-UMLet使用学习](./documents/X2_TechWork_Report/15331243-UMLet使用学习.md)
+- X3 Final Report
 - XX 建模练习
   - XX1 [饿了么应用](./documents/XX_建模练习/XX1_饿了么应用/饿了么.md)
   
