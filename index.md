@@ -16,15 +16,15 @@
   - 7.1 UI design
     - [扫码点餐系统 UI设计](./documents/7.1_consumerUIDesign.md)
     - [商家后台管理系统 UI设计](./documents/7.1_sellerUIDesign.md)
-  - 7.2 [Database design](./documents/7.2_Database_design.md)
-    - 7.2.1 用户及权限系统数据库设计
-    - 7.2.2 XX子系统数据课设计
+  - 7.2 Database design
+    - 7.2.1 [用户及权限系统数据库设计](./documents/7.2.1_Database_Design.md)
+    - 7.2.2 [扫码点餐系统数据库设计](./documents/7.2.2_Database.md)
     - 7.2.x 第三方数据评审结果
   - 7.3 API 设计
   - 7.4 Software Architecture Document
   - 7.5 Usecase design
-    - 7.5.1 [扫码点餐系统 case design](./documents/7.5.1_客户扫码点餐系统_case_design.md)
-    - 7.5.2 [商家后台管理系统 case dedign](./documents/7.5.2_商家后台管理系统_case_design.md)
+    - 7.5.1 [扫码点餐系统 case design](./documents/7.5.1_客户扫码点餐系统_Case_Design.md)
+    - 7.5.2 [商家后台管理系统 case dedign](./documents/7.5.2_商家后台管理系统_Case_Design.md)
 - 8、生产规范与指南
   - 8.1 [JavaScript代码规范](./documents/8_生产规范与指南/8.1_JavaScript代码规范.md)
   - 8.1 [WXML代码规范](./documents/8_生产规范与指南/8.1_WXML代码规范.md)
@@ -37,7 +37,7 @@
   - Iteration X meeting (yy/mm/dd)
 - X2 Tech/Work Report
   - [15331098-微信小程序技术学习报告](./documents/X2_TechWork_Report/15331098-微信小程序技术学习报告.md)
-  - [15331103-UML用例图学习报告](./documents/X2_TechWork_Report/15331103-UML用例图学习报告.md)
+  - [15331103-UML用例图学习报告](https://github.com/hongzhw/hongzhw.github.io/blob/master/_posts/2018-04-15-assigment3.md)
   - [15331104-Windows下Git&Github使用教程](./documents/X2_TechWork_Report/15331104-Windows下Git&Github使用教程.md)
   - [15331107-微信小程序开发学习报告](./documents/X2_TechWork_Report/15331107-微信小程序开发学习报告.md)
   - [15331113-微信web开发工具调试模块学习报告](./documents/X2_TechWork_Report/15331113-微信web开发工具调试模块学习报告.md)
