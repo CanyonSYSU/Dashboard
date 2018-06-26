@@ -33,8 +33,11 @@
   - 8.3 逻辑架构到应用程序映射指南
   - 8.4 物理架构云上部署 dock-compose.yml 文件编写与使用
 - X1 meet_recording
-  - inception meeting (yy/mm/dd)
-  - Iteration X meeting (yy/mm/dd)
+  - [Inception meeting (2018/03/22)](./documents/X1_meet_recording/Inception.md)
+  - [Iteration 1 meeting (2018/03/30)](./documents/X1_meet_recording/Iteration_1.md)
+  - [Iteration 2 meeting (2018/05/12)](./documents/X1_meet_recording/Iteration_2.md)
+  - [Iteration 3 meeting (2018/06/03)](./documents/X1_meet_recording/Iteration_3.md)
+  - [Iteration 4 meeting (2018/06/24)](./documents/X1_meet_recording/Iteration_4.md)
 - X2 Tech/Work Report
   - [15331098-微信小程序技术学习报告](./documents/X2_TechWork_Report/15331098-微信小程序技术学习报告.md)
   - [15331103-UML用例图学习报告](https://github.com/hongzhw/hongzhw.github.io/blob/master/_posts/2018-04-15-assigment3.md)
