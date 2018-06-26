@@ -23,7 +23,7 @@
   - 7.3 API 设计
   - 7.4 Software Architecture Document
   - 7.5 Usecase design
-    - 7.5.1 [扫码点餐系统 case design](./documents/7.5.1_客户扫码点餐系统_case_design)
+    - 7.5.1 [扫码点餐系统 case design](./documents/7.5.1_客户扫码点餐系统_case_design.md)
     - 7.5.2 [商家后台管理系统 case dedign](./documents/7.5.2_商家后台管理系统_case_design.md)
 - 8、生产规范与指南
   - 8.1 [JavaScript代码规范](./documents/8_生产规范与指南/8.1_JavaScript代码规范.md)
