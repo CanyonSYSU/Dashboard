@@ -11,7 +11,7 @@
   - 6.3 [Domian Model](./documents/6.3_Domian_Model.md)（领域模型）
   - 6.4 [State Model](./documents/6.4_State_Model.md)（状态模型）
   - 6.5 [System Sequence Diagram](./documents/6.5_System_Sequence_Diagrams.md)（功能模型）
-  - 6.6 Supplementary Requirements（补充需求）
+  - 6.6 [Supplementary Requirements](./documents/6.6_supplementary_requirements.md)（补充需求）
 - 7、Design（设计）
   - 7.1 UI design
     - [扫码点餐系统 UI设计](./documents/7.1_consumerUIDesign.md)
