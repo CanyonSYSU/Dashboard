@@ -47,6 +47,7 @@
   - [15331243-UMLet使用学习](./documents/X2_TechWork_Report/15331243-UMLet使用学习.md)
   - [15331126-微信小程序学习报告](./documents/X2_TechWork_Report/15331126-微信小程序学习报告.md)
 - X3 Final Report
+  - [15331103-final report](https://github.com/hongzhw/hongzhw.github.io/blob/master/_posts/2018-06-26-15331103_final_report.md)
 - XX 建模练习
   - XX1 [饿了么应用](./documents/XX_建模练习/XX1_饿了么应用/饿了么.md)
   
