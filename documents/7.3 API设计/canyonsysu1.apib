@@ -1,0 +1,626 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# CanyonSYSU
+
+随心点餐宝 API v1.0
+
+
+## 获取、创建评价 [/v1/comments]
+|参数         |是否必选|类型  |说明|
+|---          |---     |---   |--- |
+|tag     |N       |string|评价类型，默认类型为“全部”|
+|offset         |N      |int    |从第几条开始，默认为0|
+|count          |N      |int    |获取多少条，默认返回所有评论|
+
+
+例如
+从第5条开始显示10条连续的评价：http://xxx/v1/comments?tag=&offset=5&count=10
+
+### List All Comments [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "order_id": 1,
+                "usr_name": "ALn608101222",
+                "usr_photo": "http://xs01.meituan.net/waimai_web/img/user-default.png",
+                "comment_at": "2018-04-18/12:11",
+                "comment_star": 4,
+                "tag": "饭好吃",
+                "client_text": "明天继续订，为何店家能把饭菜做得如此好吃好吃好吃好吃好吃好吃",
+                "merchant_text": "亲的满意是我们最大的动力（比心），一份品质外卖可以让亲满足，还温暖了我们的心。三掌柜"
+            },
+            {
+                "order_id": 2,
+                "usr_name": "ewdsds",
+                "usr_photo": "http://xs01.meituan.net/waimai_web/img/user-default.png",
+                "comment_at": "2022-04-18/11:00",
+                "comment_star": 4,
+                "tag": "好评",
+                "client_text": "好吃好吃好吃",
+                "merchant_text": "亲的满意是我们最大的动力（比心）柜"
+            },
+            {
+                "order_id": 4,
+                "usr_name": "frfre",
+                "usr_photo": "http://xs01.meituan.net/waimai_web/img/user-default.png",
+                "comment_at": "2038-02-21/04:32",
+                "comment_star": 4,
+                "tag": "服务好",
+                "client_text": "明天继续订",
+                "merchant_text": "温暖了我们的心。三掌柜"
+            }
+        ]
+
+### Create A Comment to An Order [POST]
+
++ Request (application/json)
+    + Headers 
+    
+    + Body
+    
+            {
+                "order_id": 4,
+                "usr_name": "frfre",
+                "usr_photo": "http://xs01.meituan.net/waimai_web/img/user-default.png",
+                "comment_at": "2038-02-21/04:32",
+                "comment_star": 4,
+                "tag": "服务好",
+                "client_text": "明天继续订",
+                "merchant_text": "温暖了我们的心。三掌柜"
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+    + Body
+
+            {
+                "status": 1,
+                "sussess": "评论成功"
+            }
+
+## 获取评价各分类的数量 [/v1/comments/tags]
+
+### List All Comments Tags [GET]
+
++ Response 200 (application/json)
+
+        [
+            { "tag": "全部", "count": 363} ,
+            { "tag": "有图评价", "count": 116},
+            { "tag": "好评", "count": 361},
+            { "tag": "差评", "count": 11},
+            { "tag": "味道赞", "count": 121},
+            { "tag": "饭好吃", "count": 22},
+            { "tag": "服务好", "count": 363},
+            { "tag": "分量足", "count": 5},
+            { "tag": "满意", "count": 10},
+            { "tag": "推荐", "count": 9}
+        ]
+        
+## 获取商家评分 [/v1/comments/scores]
+
+### List the Comments Scores [GET]
+
++ Response 200 (application/json)
+
+        {
+            "taste_score": 4.1,
+            "sight_score": 4.7,
+            "overall_score": 4.9,
+            "service_score": 4.9
+        }
+
+## 获取食品种类 [/v1/categorys]
+### Get category from Menu [GET]
+
++ Response 200 (application/json)
+
+        [
+            "小炒",
+            "粥",
+            "冷饮"
+        ]
+        
+## 添加食物 [/v1/addfood]
+
+需要增加一条api,按类别返回菜品数组
+### Add a Food to Menu [POST]
+
++ Request (application/json)
+    
+            {
+                "src": "http://p0.meituan.net/210.0/xianfudwm/2b09f3305.jpg",
+                "name": "鲜蔬芙蓉汤",
+                "detail": "有菠菜、鸡蛋、海带、香菇",
+                "price": 6,
+                "categorys": "中式炖汤"
+            }
+
++ Response 201 (application/json)
+
+            {
+                "status": 1,
+                "sussess": "添加食品成功"
+            }
+
+## 获取食物列表 [/v1/menufoods]
+### Get All Foods from Menu [GET]
+
+|参数         |是否必选|类型  |说明|
+|---          |---     |---   |--- |
+|categorys     |N       |string|菜品类型，默认返回全部|
+
+例如：http://xxx//v1/menufoods？categorys=中式炖汤
+
++ Response 200 (application/json)
+    
+        [
+            {
+                "id" : 43,
+                "src": "http://p1.meituan.net/210.0/wmproductwm/c64c2ee2a7ad2553c3fbc7522d56bfd5216535.jpg",
+                "name": "蛋花汤",
+                "detail": "有菠菜、鸡蛋、海带、香菇",
+                "price": 6,
+                "categorys": "中式炖汤"
+            },
+            {
+                "id" : 11,
+                "src": "http://p1.meituan.net/210.0/wmproductwm/c64c2ee2a7ad2553c3fbc7522d56bfd5216535.jpg",
+                "name": "蛋花汤",
+                "detail": "有蛋没花",
+                "price": 6,
+                "categorys": "中式炖汤"
+            },
+            {
+                "id" : 43,
+                "src": "http://p1.meituan.net/210.0/wmproductwm/c64c2ee2a7ad2553c3fbc7522d56bfd5216535.jpg",
+                "name": "蛋花汤",
+                "detail": "有菠菜、鸡蛋、海带、香菇",
+                "price": 6,
+                "categorys": "中式炖汤"
+            },
+            {
+                "id" : 11,
+                "src": "http://p1.meituan.net/210.0/wmproductwm/c64c2ee2a7ad2553c3fbc7522d56bfd5216535.jpg",
+                "name": "蛋花汤",
+                "detail": "有蛋没花",
+                "price": 6,
+                "categorys": "中式炖汤"
+            },
+            {
+                "id" : 43,
+                "src": "http://p1.meituan.net/210.0/wmproductwm/c64c2ee2a7ad2553c3fbc7522d56bfd5216535.jpg",
+                "name": "蛋花汤",
+                "detail": "有菠菜、鸡蛋、海带、香菇",
+                "price": 6,
+                "categorys": "中式炖汤"
+            },
+            {
+                "id" : 11,
+                "src": "http://p1.meituan.net/210.0/wmproductwm/c64c2ee2a7ad2553c3fbc7522d56bfd5216535.jpg",
+                "name": "蛋花汤",
+                "detail": "有蛋没花",
+                "price": 6,
+                "categorys": "中式炖汤"
+            },
+            {
+                "id" : 43,
+                "src": "http://p1.meituan.net/210.0/wmproductwm/c64c2ee2a7ad2553c3fbc7522d56bfd5216535.jpg",
+                "name": "蛋花汤",
+                "detail": "有菠菜、鸡蛋、海带、香菇",
+                "price": 6,
+                "categorys": "中式炖汤"
+            },
+            {
+                "id" : 11,
+                "src": "http://p1.meituan.net/210.0/wmproductwm/c64c2ee2a7ad2553c3fbc7522d56bfd5216535.jpg",
+                "name": "蛋花汤",
+                "detail": "有蛋没花",
+                "price": 6,
+                "categorys": "中式炖汤"
+            },
+            {
+                "id" : 43,
+                "src": "http://p1.meituan.net/210.0/wmproductwm/c64c2ee2a7ad2553c3fbc7522d56bfd5216535.jpg",
+                "name": "蛋花汤",
+                "detail": "有菠菜、鸡蛋、海带、香菇",
+                "price": 6,
+                "categorys": "中式炖汤"
+            },
+            {
+                "id" : 11,
+                "src": "http://p1.meituan.net/210.0/wmproductwm/c64c2ee2a7ad2553c3fbc7522d56bfd5216535.jpg",
+                "name": "蛋花汤",
+                "detail": "有蛋没花",
+                "price": 6,
+                "categorys": "中式炖汤"
+            },
+            {
+                "id" : 43,
+                "src": "http://p1.meituan.net/210.0/wmproductwm/c64c2ee2a7ad2553c3fbc7522d56bfd5216535.jpg",
+                "name": "蛋花汤",
+                "detail": "有菠菜、鸡蛋、海带、香菇",
+                "price": 6,
+                "categorys": "中式炖汤"
+            },
+            {
+                "id" : 11,
+                "src": "http://p1.meituan.net/210.0/wmproductwm/c64c2ee2a7ad2553c3fbc7522d56bfd5216535.jpg",
+                "name": "蛋花汤",
+                "detail": "有蛋没花",
+                "price": 6,
+                "categorys": "中式炖汤"
+            },
+            {
+                "id" : 43,
+                "src": "http://p1.meituan.net/210.0/wmproductwm/c64c2ee2a7ad2553c3fbc7522d56bfd5216535.jpg",
+                "name": "蛋花汤",
+                "detail": "有菠菜、鸡蛋、海带、香菇",
+                "price": 6,
+                "categorys": "中式炖汤"
+            },
+            {
+                "id" : 11,
+                "src": "http://p1.meituan.net/210.0/wmproductwm/c64c2ee2a7ad2553c3fbc7522d56bfd5216535.jpg",
+                "name": "蛋花汤",
+                "detail": "有蛋没花hhh",
+                "price": 6,
+                "categorys": "中式炖汤"
+            }
+        ]
+
+    
+## 删除食物 [/v1/menufood/delete]
+### Delete A Food from Menu [POST]
+
++ Request (application/json)
+
+        {
+            "id": 43 
+        }
+
++ Response 200 (application/json)
+
+        {
+            "status": 1,
+            "sussess": "删除食品成功"
+        }
+
+## 更改食物信息 [/v1/menufood/update]
+### Update A Food from Menu [post]
++ Request (application/json)
+
+        {
+            "id": 43,
+            "src": "http://p0.meituan.net/210.0/xianfudwm/2b09f3305.jpg",
+            "name": "鲜蔬芙蓉汤",
+            "detail": "有菠菜、鸡蛋、海带、香菇",
+            "price": 6,
+            "categorys": "中式炖汤"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /v1/menu/2
+
+    + Body
+
+            {
+                "status": 1,
+                "sussess": "更新食品信息成功",
+                
+                "id" : 43, //要改！！！！！！！！！！！！
+                "src": "http://p0.meituan.net/210.0/xianfudwm/2b09f3305.jpg",
+                "name": "鲜蔬芙蓉汤",
+                "detail": "有菠菜、鸡蛋、海带、香菇",
+                "price": 6,
+                "categorys": "中式炖汤"
+            }
+
+
+## 订单 [/v1/orders]
+
+### Create An Order [POST]
+
++ Request (application/json)
+    
+    + Headers
+
+            Location: /v1/order/2
+            
+    + Body
+    
+            {
+                "table_id": 1,
+                "order_nums": 2,
+                "order_contain": [
+                    {
+                        "id": 43,
+                        "order_num": 3
+                    },
+                    {
+                        "id": 11,
+                        "order_num": 4
+                    }
+                ],
+                "total": 123,
+                "customer_phone": "12312312311",
+                "order_time": "2018-02-02/12:34"
+            }
+            
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /v1/order/2
+
+    + Body
+
+            {
+                "status": 1,
+                "sussess": "下单成功"
+                
+                "order_id": 4,
+                "table_id": 1,
+                "order_num": 2,
+                "order_contain": [
+                    {
+                        "id": 43,
+                        "menufoodID": 4,//客户端不需要用这个ID。。
+                        "order_num": 3
+                    },
+                    {
+                        "id": 11,
+                        "menufoodID": 4,
+                        "order_num": 4
+                    }
+                ],
+                "total": 123,
+                "customer_phone": "12312312311",
+                "order_time": "2018-02-02/12:34"
+            }
+
+### Get All Orders [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "order_id": 1,
+                "table_id": 1,
+                "order_num": 2,
+                "order_contain": [
+                    {
+                        "id": 43,
+                        "menufoodID": 1,
+                        "order_num": 3
+                    },
+                    {
+                        "id": 11,
+                        "menufoodID": 1,
+                        "order_num": 4
+                    }
+                ],
+                "total": 123,
+                "customer_phone": "12312312311",
+                "order_time": "2018-02-02/12:34"
+            },
+            {
+                "order_id": 2,
+                "table_id": 1,
+                "order_num": 2,
+                "order_contain": [
+                    {
+                        "id": 43,
+                        "menufoodID": 2,
+                        "order_num": 32
+                    },
+                    {
+                        "id": 11,
+                        "menufoodID": 2,
+                        "order_num": 333
+                    }
+                ],
+                "total": 11010,
+                "customer_phone": "13718457246",
+                "order_time": "2018-02-02/12:34"
+            }
+        ]
+
+## 删除某个订单 [/v1/order/delete]
+例如：
+### Delete An Order [POST]
+
++ Request (application/json)
+
+        {
+            "order_id": 2
+        }
+
++ Response 200 (application/json)
+
+        {
+            "status": 1,
+            "sussess": "删除订单成功"
+        }
+
+## 查看某一个订单信息 [/v1/orderid]
+|参数         |是否必选|类型  |说明|
+|---          |---     |---   |--- |
+|order_id     |N       |string|订单id，默认”全部“|
+
+### Get An Order Information[GET]
+
++ Request (application/json)
+
+
++ Response 200 (application/json)
+
+        {
+            "order_id": 2,
+            "table_id": 1,
+            "order_contain": [
+                {
+                    "id": 43,
+                    "menufoodID": 2,
+                    "order_num": 55
+                }
+            ],
+            "total": 454,
+            "customer_phone": "13718457246",
+            "order_time": "2018-02-02/12:34"
+        }
+        
+## 查看某一个用户的所有订单 [/v1/orderphone]
+|参数         |是否必选|类型  |说明|
+|---          |---     |---   |--- |
+|phone        |Y       |string|特定用户电话|
+### Get A User's All Orders [GET]
+
++ Request (application/json)
+
+
++ Response 200 (application/json)
+
+        [
+            {
+                "order_id": 1,
+                "table_id": 1,
+                "order_num": 2,
+                "order_contain": [
+                    {
+                        "id": 43,
+                        "menufoodID": 1,
+                        "order_num": 3
+                    },
+                    {
+                        "id": 11,
+                        "menufoodID": 1,
+                        "order_num": 4
+                    }
+                ],
+                "total": 123,
+                "customer_phone": "13718457246",
+                "order_time": "2018-02-02/12:34"
+            },
+            {
+                "order_id": 2,
+                "table_id": 1,
+                "order_num": 2,
+                "order_contain": [
+                    {
+                        "id": 43,
+                        "menufoodID": 2,
+                        "order_num": 32
+                    },
+                    {
+                        "id": 11,
+                        "menufoodID": 2,
+                        "order_num": 333
+                    }
+                ],
+                "total": 11010,
+                "customer_phone": "13718457246",
+                "order_time": "2018-02-02/12:34"
+            }
+        ]
+
+
+## 增加一个餐馆、查看所有餐馆信息 [/v1/resturants]
+
+### Create A Resturant [POST]
+
++ Request (application/json)
+
+        {
+           "name": "餐馆名字",
+           "location": "小谷围贝岗村中二横路",
+           "certificates": "abdkcdidngldifdff.jpg",
+           "server_time": "10:00-21:00"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /v1/resturant
+
+    + Body
+
+            {
+                status: 1,
+                sussess: "添加餐馆成功"
+            }
+
+### Get All Resturant Information [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "name": "餐馆名字",
+                "location": "小谷围贝岗村中二横路",
+                "certificates": "abdkcdidngldifdff.jpg",
+                "server_time": "10:00-21:00"
+            }
+        ]
+
++ Response 404 (application/json)
+
+        {
+            status: 0,
+            sussess: "名字重复"
+        }
+
+## 查看某一个餐馆信息 [/v1/resturants/{name}]
+### Get One Resturant Information[GET]
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /v1/resturants
+
+    + Body
+
+            {
+                "name": "餐馆名字",
+                "location": "小谷围贝岗村中二横路",
+                "certificates": "abdkcdidngldifdff.jpg",
+                "server_time": "10:00-21:00"
+            }
+
+## 更改某一个餐馆信息 [/v1/resturant/update]
+### Update A Resturant Information [PATCH]
+注意：不能改name
++ Request (application/json)
+
+        {
+            "name": "餐馆名字",
+            "location": "小谷围贝岗村中二横路",
+            "certificates": "abdkcdidngldifdff.jpg",
+            "server_time": "10:00-21:00"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /v1/resturant
+
+    + Body
+
+            {
+                "name": "餐馆名字",
+                "location": "小谷围贝岗村中二横路",
+                "certificates": "abdkcdidngldifdff.jpg",
+                "server_time": "10:00-21:00"
+            }
