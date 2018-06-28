@@ -30,7 +30,7 @@
   - 8.1 [WXML代码规范](./documents/8_生产规范与指南/8.1_WXML代码规范.md)
   - 8.1 [WXSS代码规范](./documents/8_生产规范与指南/8.1_WXSS代码规范.md)
   - 8.2 [REST API 设计规范](./documents/8_生产规范与指南/8.2_RESTAPI设计规范.md)
-  - 8.3 逻辑架构到应用程序映射指南
+  - 8.3 [逻辑架构到应用程序映射指南](./documents/8.3_逻辑架构到应用程序映射指南.md)
   - 8.4 物理架构云上部署 dock-compose.yml 文件编写与使用
 - X1 meet_recording
   - [Inception meeting (2018/03/22)](./documents/X1_meet_recording/Inception.md)
