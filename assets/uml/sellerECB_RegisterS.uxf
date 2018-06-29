@@ -222,7 +222,7 @@ create</panel_attributes>
       <h>64</h>
     </coordinates>
     <panel_attributes>&lt;&lt;boundary&gt;&gt;
-:LogonPage
+:RegisterPage
 style=wordwrap
 </panel_attributes>
     <additional_attributes/>
