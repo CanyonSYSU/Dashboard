@@ -44,11 +44,14 @@
   - [15331104-Windows下Git&Github使用教程](./documents/X2_TechWork_Report/15331104-Windows下Git&Github使用教程.md)
   - [15331107-微信小程序开发学习报告](./documents/X2_TechWork_Report/15331107-微信小程序开发学习报告.md)
   - [15331113-微信web开发工具调试模块学习报告](./documents/X2_TechWork_Report/15331113-微信web开发工具调试模块学习报告.md)
+  - [15331113-go test 单元测试与压力测试简单使用](https://blog.csdn.net/h12590400327/article/details/80870849)
+  - [15331113-利用 Travis CI 对 go项目 持续集成，涉及数据库操作](https://blog.csdn.net/h12590400327/article/details/80871536)
   - [15331243-UMLet使用学习](./documents/X2_TechWork_Report/15331243-UMLet使用学习.md)
   - [15331126-微信小程序学习报告](./documents/X2_TechWork_Report/15331126-微信小程序学习报告.md)
 - X3 Final Report
   - [15331103-final report](https://github.com/hongzhw/hongzhw.github.io/blob/master/_posts/2018-06-26-15331103_final_report.md)
   - [15331098-final report](https://github.com/QAZASDEDC/QAZASDEDC.github.io/blob/master/_posts/2018-06-30-final-report.md)
+  - [15331113-final report](https://blog.csdn.net/H12590400327/article/details/80873495)
 - XX 建模练习
   - XX1 [饿了么应用](./documents/XX_建模练习/XX1_饿了么应用/饿了么.md)
   
