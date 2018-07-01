@@ -41,7 +41,7 @@
 - X2 Tech/Work Report
   - [15331098-微信小程序技术学习报告](./documents/X2_TechWork_Report/15331098-微信小程序技术学习报告.md)
   - [15331103-UML用例图学习报告](https://github.com/hongzhw/hongzhw.github.io/blob/master/_posts/2018-04-15-assigment3.md)
-  - [15331104-Windows下Git&Github使用教程](./documents/X2_TechWork_Report/15331104-Windows下Git&Github使用教程.md)
+  - [15331104-Windows下Git&Github使用教程](https://github.com/houhx/houhx.github.io/blob/master/_posts/2018-04-15-Windows下Git%26Github使用教程.md)
   - [15331107-微信小程序开发学习报告](./documents/X2_TechWork_Report/15331107-微信小程序开发学习报告.md)
   - [15331113-微信web开发工具调试模块学习报告](./documents/X2_TechWork_Report/15331113-微信web开发工具调试模块学习报告.md)
   - [15331113-go test 单元测试与压力测试简单使用](https://blog.csdn.net/h12590400327/article/details/80870849)
