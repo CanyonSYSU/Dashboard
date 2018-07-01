@@ -54,6 +54,7 @@
   - [15331113-final report](https://blog.csdn.net/H12590400327/article/details/80873495)
   - [15331107-final report](https://hujunnan.github.io/SDA-FinalReport/)
   - [15331104-final report](https://github.com/houhx/houhx.github.io/blob/master/_posts/2018-07-01-系统分析与设计final-report.md)
+  - [15331243-final report](http://blog.csdn.net/mohuak/article/details/80876118)
 - XX 建模练习
   - XX1 [饿了么应用](./documents/XX_建模练习/XX1_饿了么应用/饿了么.md)
   
