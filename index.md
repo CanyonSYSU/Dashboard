@@ -52,6 +52,7 @@
   - [15331103-final report](https://github.com/hongzhw/hongzhw.github.io/blob/master/_posts/2018-06-26-15331103_final_report.md)
   - [15331098-final report](https://github.com/QAZASDEDC/QAZASDEDC.github.io/blob/master/_posts/2018-06-30-final-report.md)
   - [15331113-final report](https://blog.csdn.net/H12590400327/article/details/80873495)
+  - [15331107-final report](https://hujunnan.github.io/SDA-FinalReport/)
 - XX 建模练习
   - XX1 [饿了么应用](./documents/XX_建模练习/XX1_饿了么应用/饿了么.md)
   
