@@ -21,7 +21,7 @@
     - 7.2.2 [扫码点餐系统数据库设计](./documents/7.2.2_Database.md)
     - 7.2.x 第三方数据评审结果
   - 7.3 [API 设计](https://canyonsysu1.docs.apiary.io/#reference/0)([apib](./documents/7.3%20API设计/canyonsysu1.apib))
-  - 7.4 [Software Architecture Document](./documents/7.4_Software Architecture Document.md)
+  - 7.4 [Software Architecture Document](./documents/7.4_Software_Architecture_Document.md)
   - 7.5 Usecase design
     - 7.5.1 [扫码点餐系统 case design](./documents/7.5.1_客户扫码点餐系统_case_design.md)
     - 7.5.2 [商家后台管理系统 case dedign](./documents/7.5.2_商家后台管理系统_case_design.md)
@@ -31,7 +31,7 @@
   - 8.1 [WXSS代码规范](./documents/8_生产规范与指南/8.1_WXSS代码规范.md)
   - 8.2 [REST API 设计规范](./documents/8_生产规范与指南/8.2_RESTAPI设计规范.md)
   - 8.3 [逻辑架构到应用程序映射指南](./documents/8.3_逻辑架构到应用程序映射指南.md)
-  - 8.4 [物理架构云上部署 dock-compose.yml 文件编写与使用](./documents/8.4_物理架构云上部署 dock-compose.yml文件编写与使用.md)
+  - 8.4 [物理架构云上部署 dock-compose.yml 文件编写与使用](./documents/8.4_物理架构云上部署dock-compose.yml文件编写与使用.md)
 - X1 meet_recording
   - [Inception meeting (2018/03/22)](./documents/X1_meet_recording/Inception.md)
   - [Iteration 1 meeting (2018/03/30)](./documents/X1_meet_recording/Iteration_1.md)
